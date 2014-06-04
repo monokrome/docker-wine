@@ -1,6 +1,8 @@
 FROM ubuntu
 MAINTAINER Brandon R. Stoner <monokrome@monokro.me>
 
+RUN dpkg --add-architecture i386
+
 RUN apt-get update -y
 RUN apt-get install -y software-properties-common && add-apt-repository -y ppa:ubuntu-wine/ppa
 RUN apt-get update -y
