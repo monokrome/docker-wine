@@ -1,7 +1,7 @@
 docker-wine
 ===========
 
-Provides wine for Docker containers.
+This repo is likely outdated, but it provides wine for Docker containers.
 
 
 *NOTE* Any wine commands should be routed through xvfb. This will emulate an X
