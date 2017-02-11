@@ -1,4 +1,4 @@
-all: bin/winetricks xvfb-run
+all: bin/winetricks bin/xvfb-run
 	docker build -t monokrome/wine:latest .
 
 
