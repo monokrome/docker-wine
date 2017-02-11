@@ -12,4 +12,4 @@ ADD bin/xvfb-run /usr/local/bin/xvfb-run
 
 
 # Prefix commands passed into bash so that they run in xvfb
-#ENTRYPOINT xvfb-run -a wine
+ENTRYPOINT xvfb-run -a wine
