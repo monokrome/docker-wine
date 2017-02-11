@@ -1,13 +1,15 @@
-FROM ubuntu
-MAINTAINER Brandon R. Stoner <monokrome@monokro.me>
+FROM alpine
+MAINTAINER Bailey Stoner <monokrome@monokro.me>
 
-RUN dpkg --add-architecture i386
+# Install wine and xvfb.
+RUN apk update
+RUN apk add wine xvfb
 
-RUN apt-get update -y
-RUN apt-get install -y software-properties-common && add-apt-repository -y ppa:ubuntu-wine/ppa
-RUN apt-get update -y
 
-RUN apt-get install -y wine1.7 winetricks xvfb
+# Install winetricks because it's helpful. <3
+ADD ./bin/winetricks /usr/local/bin/winetricks
+ADD ./bin/xvfb-run /usr/local/bin/xvfb-run
 
-RUN apt-get purge -y software-properties-common
-RUN apt-get autoclean -y
+
+# Prefix commands passed into bash so that they run in xvfb
+#ENTRYPOINT xvfb-run -a wine

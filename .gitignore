@@ -1,0 +1,7 @@
+# Ignore bin files
+/bin/*
+
+
+# Ignore non-git hidden files
+.*
+!.git*
